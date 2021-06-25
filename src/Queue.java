@@ -4,16 +4,16 @@
  * Subject: Create a singly linked list from the scratch
  */
 
-class Node3 {
+class Node8 {
     String item;
     int count;
-    Node3 next;
-    Node3 previous;
+    Node8 next;
+    Node8 previous;
 }
 
 class Queue {
 
-    Node3 head;
+    Node8 head;
 
     Queue() {
         head = null;
@@ -21,36 +21,36 @@ class Queue {
 
     void addToHead(String item, int count){
         //creat new node
-        Node3 newNode3 = new Node3();
-        newNode3.item = item;
-        newNode3.count = count;
+        Node8 newNode8 = new Node8();
+        newNode8.item = item;
+        newNode8.count = count;
 
         //replace head
-        newNode3.next = head;
-        newNode3.previous = null;
-        head = newNode3;
+        newNode8.next = head;
+        newNode8.previous = null;
+        head = newNode8;
     }
 
     void addToTail
             (String item, int count) {
         //creat new node
-        Node3 newNode3 = new Node3();
-        newNode3.item = item;
-        newNode3.count = count;
+        Node8 newNode8 = new Node8();
+        newNode8.item = item;
+        newNode8.count = count;
 
         //if list is empty
         if (head == null) {
-            head = newNode3;
+            head = newNode8;
             return;
         }
 
         //if list is not empty
-        Node3 pointer = head;
+        Node8 pointer = head;
         while (pointer.next != null) {
             pointer = pointer.next;
         }
-        pointer.next = newNode3;
-        newNode3.previous = pointer;
+        pointer.next = newNode8;
+        newNode8.previous = pointer;
     }
 
     void deleteTail(){
@@ -61,7 +61,7 @@ class Queue {
         };
 
         //if list is not empty
-        Node3 pointer = head;
+        Node8 pointer = head;
         while (pointer.next != null){
             pointer = pointer.next;
         }
@@ -74,7 +74,7 @@ class Queue {
         //if list is empty
         if(head == null) System.out.println("List is empty");;
 
-        Node3 targetNode = head;
+        Node8 targetNode = head;
 
         head = targetNode.next;
         targetNode.next = null;
@@ -82,7 +82,7 @@ class Queue {
     }
 
     int size(){
-        Node3 pointer = head;
+        Node8 pointer = head;
         int count = 0;
         while (pointer != null){
             pointer = pointer.next;
@@ -92,7 +92,7 @@ class Queue {
     }
 
     void showQueue(){
-        Node3 pointer = head;
+        Node8 pointer = head;
         if (pointer == null) {
             System.out.println("List is empty");
             return;

@@ -7,11 +7,11 @@
 class Node2{
     String item;
     int count;
-    Node3 next;
+    Node8 next;
 }
 
 class LinkedList2 {
-    Node3 head;
+    Node8 head;
 
     LinkedList2(){
         head = null;
@@ -19,50 +19,50 @@ class LinkedList2 {
 
     void addToFirst(String item, int count){
         //creat new node
-        Node3 newNode3 = new Node3();
-        newNode3.item = item;
-        newNode3.count = count;
+        Node8 newNode5 = new Node8();
+        newNode5.item = item;
+        newNode5.count = count;
 
         //replace head
-        newNode3.next = head;
-        head = newNode3;
+        newNode5.next = head;
+        head = newNode5;
     }
 
     void addToLast(String item, int count){
         //creat new node
-        Node3 newNode3 = new Node3();
-        newNode3.item = item;
-        newNode3.count = count;
+        Node8 newNode5 = new Node8();
+        newNode5.item = item;
+        newNode5.count = count;
 
         //if list is empty
         if(head == null) {
-            head = newNode3;
+            head = newNode5;
             return;
         }
 
         //if list is not empty
-        Node3 pointer = head;
+        Node8 pointer = head;
         while (pointer.next != null){
             pointer = pointer.next;
         }
-        pointer.next = newNode3;
+        pointer.next = newNode5;
     }
 
     void addAfter(int insertPoint, String item, int count){
         //creat new node
-        Node3 newNode3 = new Node3();
-        newNode3.item = item;
-        newNode3.count = count;
+        Node8 newNode5 = new Node8();
+        newNode5.item = item;
+        newNode5.count = count;
 
         //find insert point
-        Node3 insertNode3 = returnNodeByIndex(insertPoint);
+        Node8 insertNode5 = returnNodeByIndex(insertPoint);
         //replace next values
-        newNode3.next = insertNode3.next;
-        insertNode3.next = newNode3;
+        newNode5.next = insertNode5.next;
+        insertNode5.next = newNode5;
     }
 
     int size(){
-        Node3 pointer = head;
+        Node8 pointer = head;
         int count = 0;
         while (pointer != null){
             pointer = pointer.next;
@@ -71,11 +71,11 @@ class LinkedList2 {
         return count;
     }
 
-    Node3 returnNodeByIndex(int index){
+    Node8 returnNodeByIndex(int index){
         //validation of index number
         if (index > size() - 1 ) return null;
 
-        Node3 pointer = head;
+        Node8 pointer = head;
         for(int i = 0; i <= index; i++){
             pointer = pointer.next;
         }
@@ -86,7 +86,7 @@ class LinkedList2 {
         //if list is empty
         if(head == null) return;
 
-        Node3 targetNode = head;
+        Node8 targetNode = head;
         head = targetNode.next;
         targetNode.next = null;
     }
@@ -94,15 +94,15 @@ class LinkedList2 {
 
 
     void deleteNodeByIndex(int index){
-        Node3 targetNode = returnNodeByIndex(index);
-        Node3 previous = returnNodeByIndex(index-1);
+        Node8 targetNode = returnNodeByIndex(index);
+        Node8 previous = returnNodeByIndex(index-1);
 
         previous.next = targetNode.next;
         targetNode.next = null;
     }
 
-    Node3 find(String searchKey){
-        Node3 pointer = head;
+    Node8 find(String searchKey){
+        Node8 pointer = head;
         while(pointer != null){
             if(pointer.item.equals(searchKey)) return pointer;
             pointer = pointer.next;
@@ -115,7 +115,7 @@ class LinkedList2 {
     }
 
     void showList(){
-        Node3 pointer = head;
+        Node8 pointer = head;
         if (pointer == null) {
             System.out.println("List is empty");
             return;
@@ -126,9 +126,14 @@ class LinkedList2 {
         }
     }
 
+    void clear(){
+        head.next = null;
+        head = null;
+    }
+
     void emptyList(){
 
-        Node3 pointer = head;
+        Node8 pointer = head;
 
         //if the list is empty
         if (pointer == null) {

@@ -4,15 +4,15 @@
  * Subject: Create a singly linked list from the scratch
  */
 
-class Node {
+class Node11 {
     String item;
     int count;
-    Node3 next;
-    Node3 previous;
+    Node11 next;
+    Node11 previous;
 }
 
 class DoublyLinkedList {
-    Node3 head;
+    Node11 head;
 
     DoublyLinkedList(){
         head = null;
@@ -20,52 +20,52 @@ class DoublyLinkedList {
 
     void addToFirst(String item, int count){
         //creat new node
-        Node3 newNode3 = new Node3();
-        newNode3.item = item;
-        newNode3.count = count;
+        Node11 newNode11 = new Node11();
+        newNode11.item = item;
+        newNode11.count = count;
 
         //replace head
-        newNode3.next = head;
-        newNode3.previous = null;
-        head = newNode3;
+        newNode11.next = head;
+        newNode11.previous = null;
+        head = newNode11;
     }
 
     void addToLast(String item, int count){
         //creat new node
-        Node3 newNode3 = new Node3();
-        newNode3.item = item;
-        newNode3.count = count;
+        Node11 newNode11 = new Node11();
+        newNode11.item = item;
+        newNode11.count = count;
 
         //if list is empty
         if(head == null) {
-            head = newNode3;
+            head = newNode11;
             return;
         }
 
         //if list is not empty
-        Node3 pointer = head;
+        Node11 pointer = head;
         while (pointer.next != null){
             pointer = pointer.next;
         }
-        pointer.next = newNode3;
-        newNode3.previous = pointer;
+        pointer.next = newNode11;
+        newNode11.previous = pointer;
     }
 
     void addAfter(int insertPoint, String item, int count){
         //creat new node
-        Node3 newNode3 = new Node3();
-        newNode3.item = item;
-        newNode3.count = count;
+        Node11 newNode11 = new Node11();
+        newNode11.item = item;
+        newNode11.count = count;
 
         //find insert point
-        Node3 insertNode3 = returnNodeByIndex(insertPoint);
+        Node11 insertNode11 = returnNodeByIndex(insertPoint);
         //replace next values
-        newNode3.next = insertNode3.next;
-        insertNode3.next = newNode3;
+        newNode11.next = insertNode11.next;
+        insertNode11.next = newNode11;
     }
 
     int size(){
-        Node3 pointer = head;
+        Node11 pointer = head;
         int count = 0;
         while (pointer != null){
             pointer = pointer.next;
@@ -74,11 +74,11 @@ class DoublyLinkedList {
         return count;
     }
 
-    Node3 returnNodeByIndex(int index){
+    Node11 returnNodeByIndex(int index){
         //validation of index number
         if (index > size() - 1 ) return null;
 
-        Node3 pointer = head;
+        Node11 pointer = head;
         for(int i = 0; i <= index; i++){
             pointer = pointer.next;
         }
@@ -89,7 +89,7 @@ class DoublyLinkedList {
         //if list is empty
         if(head == null) System.out.println("List is empty");;
 
-        Node3 targetNode = head;
+        Node11 targetNode = head;
 
         head = targetNode.next;
         targetNode.next = null;
@@ -104,7 +104,7 @@ class DoublyLinkedList {
         };
 
         //if list is not empty
-        Node3 pointer = head;
+        Node11 pointer = head;
         while (pointer.next != null){
             pointer = pointer.next;
         }
@@ -116,15 +116,15 @@ class DoublyLinkedList {
 
 
     void deleteNodeByIndex(int index){
-        Node3 targetNode = returnNodeByIndex(index);
-        Node3 previous = returnNodeByIndex(index-1);
+        Node11 targetNode = returnNodeByIndex(index);
+        Node11 previous = returnNodeByIndex(index-1);
 
         previous.next = targetNode.next;
         targetNode.next = null;
     }
 
-    Node3 find(String searchKey){
-        Node3 pointer = head;
+    Node11 find(String searchKey){
+        Node11 pointer = head;
         while(pointer != null){
             if(pointer.item.equals(searchKey)) return pointer;
             pointer = pointer.next;
@@ -137,7 +137,7 @@ class DoublyLinkedList {
     }
 
     void showList(){
-        Node3 pointer = head;
+        Node11 pointer = head;
         if (pointer == null) {
             System.out.println("List is empty");
             return;
@@ -152,9 +152,10 @@ class DoublyLinkedList {
         head.next = head.previous = null;
         head = null;
     }
+
     void emptyList(){
 
-        Node3 pointer = head;
+        Node11 pointer = head;
 
         //if the list is empty
         if (pointer == null) {
