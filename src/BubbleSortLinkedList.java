@@ -21,8 +21,6 @@ class BubbleSortLinkedList {
         head = null;
     }
 
-
-
 //    public static int[] sorter(int[] arr){
 //        boolean neadNextPass = true;
 //        for (int i = 0 ; i < arr.length && neadNextPass; i++){
@@ -198,16 +196,18 @@ class BubbleSortLinkedList {
         list.addToFirst(12);
         list.addToFirst(1);
         list.addToFirst(50);
+        list.addToFirst(4);
+        list.addToFirst(126598);
         list.addToFirst(25);
         list.addToFirst(-9);
         list.addToFirst(11);
         list.addToFirst(100);
+        list.addToFirst(0);
         list.showList();
         System.out.println("------------------ after Bubble sort---------------");
-//        System.out.println(list.size());
+//      System.out.println(list.size());
         list.bubbleSort();
         list.showList();
-//        list.showList();
 
 
     }
